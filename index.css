@@ -1,3 +1,209 @@
+/* akarsha css part for home page  */
+#navbar{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* position:fixed;
+margin-bottom: 15%; */
+
+}
+#navbar>div:nth-child(1){
+    display: flex;
+    justify-content: space-between;
+    padding: 1%;
+}
+#logo{
+    width: 10%;
+}
+#navbar>div:nth-child(1) input{
+    width: 40%;
+    border-radius: 25px;
+}
+#navbar>div:nth-child(2){
+    padding: 1%;
+    display: flex;
+    justify-content: space-between;
+}
+#navbar>div:nth-child(2)>div:nth-child(2){
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+#navbar>div:nth-child(2)>div:nth-child(3){
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+#navbar>div:nth-child(2)>div:nth-child(3) button{
+    width: 20%;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+/* slider css  */
+
+#slider{
+    width: 100%;
+    margin: auto;
+    background-color: white;
+}
+#slider>div:nth-child(1){
+    width: 40%;
+    display: flex;
+    margin: auto;
+}
+#slider>div:nth-child(1) img{
+    width: 5%;
+    margin: 5px;
+}
+#slider>div:nth-child(1) p{
+    /* width: 5%; */
+    margin-top: 25px;
+    margin-left:5px ;
+}
+#recently{
+    width: 95%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 25px;
+}
+#recently img{
+    width: 100%;
+}
+#recently>div{
+    padding: 5%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#recently>div p{
+    text-decoration: underline;
+    text-decoration-color:grey ;
+}
+#recently>div:nth-child(3) img{
+    width: 51%;
+    margin: 10%;
+    margin-bottom: 3.5%;
+    margin-left: 22%;
+}
+#recently>div:nth-child(4){
+    display: flex;
+    flex-direction: column;
+}
+#recently>div:nth-child(4)>div:nth-child(1){
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 2%;
+    text-align: center;
+}
+#recently>div:nth-child(4)>div:nth-child(1) button{
+    width: 60%;
+    margin-bottom: 5px;
+    padding: 4%;
+    border-radius: 15px;
+    border: 1px solid white;
+    background-color: #414467;
+    color: white;
+}
+#recently>div:nth-child(4)>div:nth-child(2){
+    padding: 3.6%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#recently>div:nth-child(4)>div:nth-child(2) img{
+    width: 100%;
+    /* padding: 10%; */
+}
+#recently>div:nth-child(2) img{
+width: 100%;
+}
+#recently>div:nth-child(1) img{
+    width: 100%;
+    }
+#slider>div:nth-child(2){
+    width: 100%;
+}
+#slider>div:nth-child(2) img{
+    width: 100%;
+}
+    
+#popular{
+    display: flex;
+    width: 95%;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#popular>div:nth-child(1){
+    width: 30%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    height: 515px;
+}
+#popular>div:nth-child(1) img{
+    width: 90%;
+    padding: 3%;
+}
+#popular>div:nth-child(2){
+     width: 65%; 
+    display: flex;
+    flex-direction: column;
+    
+}
+#popular>div:nth-child(2)>div:nth-child(1){
+    display: flex;
+    justify-content: space-between;
+    padding: 3.5%;
+}
+#popular>div:nth-child(2)>div:nth-child(1) img{
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+#popular>div:nth-child(2)>div:nth-child(2){
+    display: grid;
+    width: 80%;
+    grid-template-columns: repeat(4,1fr);
+    gap: 35px;
+    padding: 3.5%;
+}
+#popular>div:nth-child(2)>div:nth-child(2) div{
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+#pop{
+    text-align: center;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 28px;
+    color: #2e2c38;
+}
+#s_logo{
+    width: 10%;
+    margin: auto;
+    
+    
+}
+#s_logo img{
+    width: 100%;
+}
+#hotdeals{
+    width: 95%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 35px;
+    background-color: white;
+}
+#hotdeals>div{
+    padding: 5%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: white;
+}
+#navbar>div:nth-child(2)>div:nth-child(3) button{
+border: 0px;
+padding: 1.5%;
+text-align: center;
+}
+
+
+/* nikhil css part for home page  */
 *{
     margin: 0px;
     padding: 0px;
@@ -12,6 +218,7 @@
     margin-bottom: 35px;
     padding: 12px 0px 12px 0px;
     background-color: white;
+    margin-top: 32px;
 }
 #div14>h1{
     margin-left: 23px;
@@ -157,7 +364,7 @@
     margin-bottom: 35px;
     background-color: white;
     padding-top: 23px;
-
+   padding-bottom: 50px;
 }
 #div17>h1{
     background-color: white;
@@ -186,7 +393,8 @@
     width: 100%;
  }
  .swiper-pagination{
-     height: 20px;
+     height: 0px;
+     margin: 5px;
  }
  .swiper, .swiper-wrapper,.swiper-button-next,.wiper-button-prev,.swiper-pagination,.swiper-slide,.div17_price,.div17_ship,.swiper-slide h2,.swiper-slide div{
      background-color: white;
@@ -210,6 +418,8 @@
 
      background-color: transparent;
  }
+
+
 
 /* div 18 css  */
 #div18{

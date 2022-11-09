@@ -1,288 +1,315 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        #div9 {
-            margin: auto;
-            text-align: center;
-            width: 100%;
-            font-family: serif;
-            font-style: normal;
-            font-size: 20px;
-            line-height: 38px;
-            color: #2e2c38;
-            margin: 20px auto;
-        }
-
-        #div9 h4{
-            font-size: 18px;
-            padding: 0px;
-        }
-
-        #div9>div {
-            display: flex;
-            width: 80%;
-            margin: auto;
-            justify-content: space-between;
-
-            gap: 40px;
-        }
-
-        #div9>div>div {
-            width: 20%;
-
-            text-align: center;
-        }
-
-        #div9>div>div img {
-            width: 100%;
-            border-radius: 50%;
-
-            border: 8px solid #cbcdd4
-        }
-
-        #div10 {
-            width: 100%;
-            border: 1px solid blue;
-            margin: 20px auto;
-        }
-
-        #div10>div {
-            width: 100%;
-            border: 1px solid red;
-            display: flex;
-            justify-content: space-around;
-        }
-
-        #div10>div>div:nth-child(1) {
-            width: 30%;
-            border: 1px solid green
-        }
-
-        #div10>div>div:nth-child(1) img {
-            width: 100%;
-
-        }
-        #div10>div>div:nth-child(2) {
-            width: 60%;
-
-        }
-        #div10>div>div:nth-child(2)  {
-            width: 60%;
-            text-align: center;
-
-        }
-        #div10>div>div:nth-child(2) img  {
-            width: 100%;
-            text-align: center;
-
-        }
-        #div11 {
-            width: 100%;
-            border: 0px solid blue;
-            margin:20px auto
-        }
-
-        #div11>div {
-            width: 100%;
-            border: 1px solid red;
-            display: flex;
-        }
-
-        #div11>div>div:nth-child(2) {
-            width: 30%;
-            border: 1px solid green
-        }
-
-        #div11>div>div:nth-child(2) img {
-            width: 100%;
-
-        }
-        #div11>div>div:nth-child(1) {
-            width: 60%;
-
-        }
-        #div12 {
-            width: 100%;
-            border: 0px solid blue;
-            margin:20px auto
-        }
-
-        #div12>div {
-            width: 100%;
-            border: 1px solid red;
-            display: flex;
-        }
-
-        #div12>div>div:nth-child(1) {
-            width: 30%;
-            border: 1px solid green
-        }
-
-        #div12>div>div:nth-child(1) img {
-            width: 100%;
-
-        }
-        #div12>div>div:nth-child(2) {
-            width: 60%;
-
-        }
-
-        #div13{
-            display: flex;
-            width: 100%;
-            margin: auto;
-            border: 1px solid red;
-            justify-content: space-around;
-            margin:20px auto
-        }
-    </style>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://kit.fontawesome.com/24c494a6b6.js" crossorigin="anonymous"></script>
     <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <title>Coll Monk Home Page</title>
+    <!-- <link rel="stylesheet" href="akarsha_day1.css"> -->
+    <style>
+        #slider>h2{
+            text-align: center;
+            background-color: white;
+            padding: 4px 0px 23px 0px;
+            font-weight: normal;
+            font-size: 32px;
+            margin-top: 32px;
+           
+        }
+   
+        #recently{
+            margin-top: 32px;
+            margin-bottom: 40px;
+        }
+        #recently, #recently div, #recently h2, #recently p{
+            background-color: white;
+        }
+        #recently h2, #recently p{
+            font-weight: normal;
+            text-align: center;
+        }
+        /* #recently img{
+            margin-top: 12px;
+        } */
+       #recent_1 img, #recent_2 img{
+         margin-top: 12px;
+       }
+       /* #s_logo{
+        margin-bottom: 43px;
+       } */
+     
+    </style>
+
+   
 </head>
-
 <body>
-    <div id="div9">
-        <h1>Fall Must-Haves</h1>
+
+    <!-- Akarsh home page part  -->
+    <div id="navbar">
         <div>
-            <div><img src="https://img.shop.com/Image/260000/266700/266794/products/1920610566.jpg?plain&size=400x400"
-                    alt="">
-                
-                <h4>WOMENS'S SWEATER</h4>
-            </div>
-            <div><img src="https://img.shop.com/Image/270000/278200/278200/products/1893109510.jpg?plain&size=400x400"
-                    alt="">
-                <h4>SCARVES</h4>
-            </div>
-            <div><img src="https://img.shop.com/Image/260000/266700/266794/products/1920629638.jpg?plain&size=400x400"
-                    alt="">
-                <h4>WOMENS'S JEANS</h4>
-            </div>
-            <div><img src="https://img.shop.com/Image/280000/289600/289605/products/1946502092.jpg?plain&size=400x400"
-                    alt="">
-                <h4>WOMENS'S BOOTS</h4>
-            </div>
-            <div><img src="https://img.shop.com/Image/260000/266700/266794/products/1940554751.jpg?plain&size=400x400"
-                    alt="">
-                <h4>BAG'S & TOTES</h4>
-            </div>
-            <div><img src="https://img.shop.com/Image/250000/251800/251872/products/1927616009.jpg?plain&size=400x400"
-                    alt="">
-                <h4>PUMPKIN SPICE</h4>
+            <img id="logo" src="https://img.shop.com/Image/resources/logos/shop-logo-us-thanksgiving.svg" alt="">
+            <input type="text" placeholder="search products">
+            <img src="https://www.shop.com/feo-cdn/Z/t/BZP3JZ4so.webp" alt="">
+        </div>
+        
+        <div>
+            <div>Categories</div>
+            <div>
+            <p>Exclusive Brands</p>
+            <p>Stores</p>
+            <p>Deals</p>
+            <p>SHOP Travel</p>
+            <p>Departments</p>
+            <p>ShopBuddy</p>
+            <p>SHOP Local</p></div>
+            <div>
+                <button>Signin</button>
+                <button>Orders</button>
+                <button>Cart</button>
             </div>
         </div>
     </div>
-    <div id="div10">
-        <h1>Luxury Beauty Gifts from Motives</h1>
+    
+    <div id="slider">
+        
+            <h2>$50,009,502 awarded in Cashback !</h2>
+        <div>
+            <img src="https://www.shop.com/feo-cdn/T/6/fBRDtYVoo.jpg" alt="">
+        </div>
+    </div>
+   
+    <div id="recently">
+        <div id="recent_1">
+            <h2>Recently Viewed</h2>
+            <img src="https://img.shop.com/Image/280000/282000/282022/products/1840336552.jpg?plain&size=300x300" alt="">
+            <p>Browsing History</p>
+        </div>
+        <div id="recent_2">
+            <h2>Your Favorite Departments</h2>
+            <img src="https://img.shop.com/Image/departments/Jewelry.jpg" alt="">
+            <p>Jewellery</p>
+        </div>
+        <div id="recent_3">
+            <h2>Featured OneCart Stores</h2>
+            <img src="https://img.shop.com/Image/topbrands/nmlogos_139741.gif" alt="">
+            <img src="https://img.shop.com/Image/topbrands/nmlogos_135927.gif" alt="">
+            <img src="https://img.shop.com/Image/topbrands/nmlogos_101327.gif" alt="">
+            <img src="https://img.shop.com/Image/topbrands/nmlogos_135882.gif" alt="">
+            <p>See More Stores</p>
+        </div>
         <div>
             <div>
-                <img src="https://img.shop.com/Image/homepage/motives-usa-can-eng-105076-2022-holiday-banner-600x600-img-min1666019864593.jpg"
-                    alt="">
-            </div>
-            <div id="append10">
-                <section class="slider_container">
-                    <div class="container">
-                        <div class="swiper card_slider">
-                            <div class="swiper-wrapper">
-                                
-                            </div>
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
-                        </div>
-                    </div>
-                </section>
-
-            </div>
-        </div>
-    </div>
-    <div id="div11">
-        <h1>Skin Care from Lumière de Vie</h1>
-
-        <div>
-            <div id="append11">
-                <section class="slider_container">
-                    <div class="container">
-                        <div class="swiper card_slider">
-                            <div class="swiper-wrapper2">
-                                
-                            </div>
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
-                        </div>
-                    </div>
-                </section>
+                <h2>SignIn For the Best Experience</h2>
+                <button>SignIn</button>
             </div>
             <div>
-                <img src="https://img.shop.com/Image/homepage/lumiere-usa-104869-holiday-2022-banner-600x600-img-min1666027440902.jpg"
-                    alt="">
+                <img src="https://img.shop.com/Image/homepage/sa-usa-103713-pain-relief-spray-lg-media1664464729834.jpg" alt="">
             </div>
         </div>
-
-
     </div>
-    <div id="div12">
-        <h1>Iconic Pieces from Layered</h1>
+
+    <!-- <p id="pop">Popular</p> -->
+    
+    <!-- <div id="popular">
+        <h1></h1>
+        <div>
+            <img src="https://www.shop.com/feo-cdn/2/C/6PAu5NzKI.jpg" alt="">
+        </div>
         <div>
             <div>
-                <img src="https://img.shop.com/Image/homepage/layered-usa-105249-ambers-favorites-banner-600x600-img-min1666023332340.jpg"
-                    alt="">
+                <img src="https://www.shop.com/feo-cdn/A/p/ONaGbc0Sw.webp" alt="">
+                <img src="https://www.shop.com/feo-cdn/W/F/MSQneTOF8.webp" alt="">
+                <img src="https://www.shop.com/feo-cdn/X/g/Cy6TquKvY.webp" alt="">
+                <img src="https://www.shop.com/feo-cdn/6/6/p7X0qYWOo.webp" alt="">
+                <img src="https://www.shop.com/feo-cdn/Y/K/Ba4Gsx3yk.webp" alt="">
             </div>
-            <div id="append12">
-                <section class="slider_container">
-                    <div class="container">
-                        <div class="swiper card_slider">
-                            <div class="swiper-wrapper3">
-                                
-                            </div>
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
-                        </div>
-                    </div>
-                </section>
+            <div>
+                <div>
+                    <img src="https://www.shop.com/feo-cdn/b/3/BNMOSA8D8.webp" alt="">
+                    <p>Now 2.00% Cashback</p>
+                </div>
+                <div>
+                    <img src="https://www.shop.com/feo-cdn/0/4/X-iPy5AtM.webp" alt="">
+                    <p>Up to 50% off Deal of the Day</p>
+                </div>
+                <div>
+                    <img src="https://www.shop.com/feo-cdn/9/e/txtnKDsX0.webp" alt="">
+                    <p>4.00% Cashback</p>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div id="s_logo">
+        <img src="https://img.shop.com/Image/resources/homepage/shop-homepage-icon.svg" alt="">
+    </div>
+    <div id="hotdeals">
+        <div>
+            <img src="https://www.shop.com/feo-cdn/V/A/d5i4KGe7Y.webp" alt="">
+            <p>Now 2.00% Cashback</p>
+        </div>
+        <div>
+            <img src="https://www.shop.com/feo-cdn/w/_/d2ZGbuO-Q.webp" alt="">
+            <p>Now 6.00% Cashback</p>
+        </div>
+        <div>
+            <img src="https://www.shop.com/feo-cdn/r/y/3KsTpsCmE.jpg" alt="">
+            <p>Now 4.00% Cashback</p>
+        </div>
+        <div>
+            <img src="https://www.shop.com/feo-cdn/y/a/u6hvxtGS4.webp" alt="">
+            <p>Now 9.00% Cashback</p>
+        </div>
+    </div>
+
+
+   
+
+
+    <!-- nikhil home page part  -->
+    <div id="div14">
+        <h1>Best of Web Prices & Deals</h1>
+        <div id="div14_main">
+            <div id="div14_first">
+                <img src="https://img.shop.com/Image/homepage/shop-usa-95001-bestofweb-600x6001663812967571-img.jpg"
+                    alt="Best of web prices">
+            </div>
+            <div id="div14_second">
+
+            </div>
+        </div>
+
+    </div>
+
+    <div id="div15">
+        <div id="div15_1">
+            <img src="https://www.shop.com/feo-cdn/J/g/lHgVumY20.webp" alt="Sale image">
+            <h3>6.00% Cashback</h3>
+            <h5>15% off with Coupon Code HOLIDAY15 and Free Shipping on orders of $80 or mo</h5>
+        </div>
+        <div id="div15_2">
+            <img src="https://www.shop.com/feo-cdn/X/l/Bq-Y9D7Uo.webp" alt="image">
+            <h3>2.00% Cashback</h3>
+        </div>
+        <div id="div15_3">
+            <img src="https://www.shop.com/feo-cdn/z/R/K2JyxphrQ.webp" alt="image">
+            <h3>6.00% Cashback</h3>
+            <h5>20% off with coupon HOLIDAY20 and Free Shipping on all orders.</h5>
+        </div>
+        <div id="div15_4">
+            <img src="https://www.shop.com/feo-cdn/C/8/42SG6QRLI.webp" alt="image">
+            <h3>4.00% Cashback</h3>
+        </div>
+    </div>
+
+    <div id="div16">
+        <h1>Stay Healthy with Essential 9!</h1>
+        <div id="div16_main">
+            <div id="div16_first">
+
+            </div>
+            <div id="div16_second">
+                <img src="https://www.shop.com/feo-cdn/Q/l/CTfnC54RU.webp" alt="image">
             </div>
         </div>
     </div>
-    <div id="div13">
-        <div>
-            <img src="https://img.shop.com/Image/homepage/royal-spa-usa-engsmall1666034758440.jpg" alt="">
-        </div>
-        <div>
-            <img src="https://img.shop.com/Image/homepage/motives-usa-eng-102605-amber-essential-learnmore-sm1666035429174.jpg"
-                alt="">
-        </div>
-        <div>
-            <img src="https://img.shop.com/Image/homepage/ultimate-aloe-usa-104492-all-in-one-media1666043057263.jpeg"
-                alt="">
-        </div>
-        <div>
-            <img src="https://img.shop.com/Image/homepage/tls-usa-104610-shakes-holiday-banner-media1666043357824.jpeg"
-                alt="">
+
+
+    <div id="div17">
+        <h1>Cleaning & Health Have Never Been More Important</h1>
+        <!-- <div id="div17_main">
+
+        </div> -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-    <script>
-        var swiper = new Swiper(".card_slider", {
-          slidesPerView: 3,
-          spaceBetween: 30,
-          pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-          },
-          navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-          
-        });
-      </script>
-       
+
+    <div id="div18">
+        <h1>Our Brands</h1>
+
+        <div id="div18_main">
+            <div id="div18_1">
+                <!-- these should be links  -->
+                <h3>HEALTH & NUTRITION</h3>
+                <img src="https://www.shop.com/feo-cdn/5/m/AdeGaxB0k.webp" alt="">
+            </div>
+            <div id="div18_2">
+                <h3>BEAUTY</h3>
+                <img src="https://www.shop.com/feo-cdn/I/w/FMNtlJMyg.webp" alt="">
+            </div>
+            <div id="div18_3">
+                <h3>HOME & CLEANING</h3>
+                <img src="https://www.shop.com/feo-cdn/C/S/H8ql3Ryh4.webp" alt="">
+            </div>
+            <div id="div18_4">
+                <h3>BABY & KIDS</h3>
+                <img src="https://www.shop.com/feo-cdn/H/G/L4_BhKWco.webp" alt="">
+            </div>
+            <div id="div18_5">
+                <h3>JEWELERY</h3>
+                <img src="https://www.shop.com/feo-cdn/4/4/HXrw3sPbY.webp" alt="">
+            </div>
+        </div>
+
+    </div>
+
+    <div id="footer">
+        <div id="footer_first">
+
+        </div>
+        <div id="footer_second">
+            <!-- <a href="#">start</a> -->
+            <p>© 1997-2022 Market America, Inc. or its affiliates. All other designated trademarks, copyrights, and
+                brands are the property of their respective owners.</p>
+            <p>Only Customers will receive cashback on qualifying purchases. UnFranchise Owners/Shop Consultants will
+                receive increased IBV instead of cashback on qualifying purchases.</p>
+            <p></p>
+            <hr>
+            <div id="footer_second_logo">
+                <div class="footer_logo"><img src="https://www.shop.com/feo-cdn/7/F/BIyWLz__s.webp" alt=""></div>
+                <div class="footer_logo">
+                    <img src="https://www.shop.com/feo-cdn/B/L/K5pf_0c94.webp" alt="">
+                </div>
+                <div class="footer_logo">
+                    <img src="https://www.shop.com/feo-cdn/m/S/eK8gl_JjY.webp" alt="">
+                </div>
+                <div class="footer_logo">
+                    <img src="https://www.shop.com/feo-cdn/0/q/U9W4qM8Kw.webp" alt="">
+                </div>
+                <div class="footer_logo">
+                    <img src="https://www.shop.com/feo-cdn/B/0/gcyjKyFgc.png" alt="">
+                </div>
+                <div class="footer_logo">
+                    <img src="https://www.shop.com/feo-cdn/N/z/XfD9Uvd_o.webp" alt="">
+                </div>
+                <div class="footer_logo">
+                    <img src="" alt="">
+                </div>
+                <div class="footer_logo">
+                    <img src="https://www.shop.com/feo-cdn/K/F/E44Pe49Qs.webp" alt="">
+                </div>
+                <div class="footer_logo">
+                    <img src="https://www.shop.com/feo-cdn/o/4/4qo_Ilk1Q.webp" alt="">
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
 </body>
-
 </html>
-<script src="./index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script src="index.js"></script>
