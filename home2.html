@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/1fedb2eabf.js" crossorigin="anonymous"></script>
+    <style>
+        #div4 {
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            width: 95%;
+            margin: auto;
+            height: auto;
+        }
+
+        #div4bottom {
+            display: flex;
+            width: 100%;
+            margin: auto;
+            height: auto;
+        }
+
+        #div4_slider {
+            flex: 7
+        }
+
+        #div4_img {
+            flex: 3;
+            margin: auto;
+            width: 100%;
+        }
+
+        /* swipper slider  */
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .mySwiper {
+            width: 100%;
+            margin: auto;
+            height: 400px;
+            margin-top: 20px;
+            padding-top: 20px;
+
+            /* object-fit: cover; */
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            font-weight: 400;
+            background: #fff;
+            width: 60%;
+            height: 300px;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            flex-direction: column;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 250px;
+            /* object-fit: cover; */
+        }
+
+        .swiper {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .swiper-wrapper {
+            text-align: center;
+            font-size: 12px;
+            width: 50%;
+            height: auto;
+        }
+
+        #div5 {
+            display: flex;
+            width: 95%;
+            height: auto;
+            margin: auto;
+            padding: auto ;
+            gap: 30px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            /* border: 1px solid red; */
+        }
+
+        #div5 img {
+            
+            width: 90%;
+            height: 80%;
+        }
+
+        #div5child {
+            width: 90%;
+            margin: auto;
+            height: auto;
+            /* padding: 30px; */
+            margin-left: 30px;
+            margin-right: 30px;
+            padding-top: 30px;
+            column-gap : 30px;
+        }
+
+        #topheading {
+            text-align: center;
+            font-size: 50px;
+            /* line-height: 50px; */
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+
+        #div6 {
+            width: 95%;
+            height: auto;
+            margin: auto;
+            padding: auto;
+            gap: 30px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            /* border: 1px solid black; */
+        }
+
+        #div6bottom {
+            display: flex;
+            width: 100%;
+            height: auto;
+            margin: auto;
+            padding: auto;
+            gap: 30px;
+            /* border: 1px solid red; */
+        }
+
+        #div6bottom img {
+            width: 100%;
+            border-radius: 50%;
+        }
+
+        #div6child {
+            width: 100%;
+            height: auto;
+            /* padding: 30px; */
+            margin: 30px;
+            border-radius: 40%;
+            border:5px solid grey;
+        }
+        #div6child h2{
+            color: grey;
+            font-size: 20px;
+            text-align: center;
+        }
+        #div7{
+            display: flex;
+            /* flex-direction: column; */
+            width: 95%;
+            margin: auto;
+            border: 1px solid green;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+        .swiper2 {
+            width: 100%;
+            height: 100%;
+        }
+
+        .mySwiper2 {
+            width: 100%;
+            margin: auto;
+            height: 400px;
+            margin-top: 20px;
+            padding-top: 20px;
+
+            /* object-fit: cover; */
+        } 
+
+        .swiper-slide2 {
+            text-align: center;
+            font-size: 18px;
+            font-weight: 400;
+            background: #fff;
+            width: 60%;
+            height: 300px;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            flex-direction: column;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+
+
+        } 
+           
+
+        .swiper-slide2 img {
+            display: block;
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .swiper2 {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .swiper-wrapper2 {
+            text-align: center;
+            font-size: 12px;
+            width: 50%;
+            height: auto;
+        } 
+    </style>
+</head>
+
+<body>
+    <hr>
+    <div id="div4">
+        <div id="topheading">Hottest Toys</div>
+        <div id="div4bottom">
+            <!-- Swiper -->
+            <div id="div4_slider" class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"></div>
+                    <div class="swiper-slide"></div>
+                    <div class="swiper-slide"></div>
+                    <div class="swiper-slide"></div>
+
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <div id="div4_img">
+                <img src="https://img.shop.com/Image/homepage/shop-gbr-102789-holiday-hot-toys-banners-600x600-img-min1666631558062.jpg"
+                    alt="">
+            </div>
+        </div>
+    </div>
+    <div id="div5">
+        <div id="div5child"><img src="https://img.shop.com/Image/homepage/giftsforher-media1664553609405.jpg" alt="">
+        </div>
+        <div id="div5child"><img src="https://img.shop.com/Image/homepage/giftsforhim-media1664553622036.jpg" alt="">
+        </div>
+        <div id="div5child"><img src="https://img.shop.com/Image/homepage/giftsforteens-media1664553627912.jpg" alt="">
+        </div>
+    </div>
+    <div id="div6">
+        <div id="topheading">Gift Ideas</div>
+
+        <div id="div6bottom">
+            <div id="div6child"><img src="https://www.shop.com/feo-cdn/t/b/bOOcKZ1A0.webp" alt="">
+                <h2>Electronic Gifts</h2>
+            </div>
+            <div id="div6child"><img src="https://www.shop.com/feo-cdn/W/H/_6el9zKss.webp" alt="">
+                <h2>Gifts under $50</h2>
+            </div>
+            <div id="div6child"><img src="https://www.shop.com/feo-cdn/i/p/N4AyBQQC8.webp" alt="">
+                <h2>Gifts under $25</h2>
+            </div>
+            <div id="div6child"><img src="https://www.shop.com/feo-cdn/Q/Y/bUc_3ZwhQ.webp" alt="">
+                <h2>Gifts under $100</h2>
+            </div>
+            <div id="div6child"><img src="https://www.shop.com/feo-cdn/n/h/bi8dGCn6c.webp" alt="">
+                <h2>Stocking Stuffers</h2>
+            </div>
+            <div id="div6child"><img src="https://www.shop.com/feo-cdn/A/v/wiZ8D0MpI.webp" alt="">
+                <h2>Gifts for the Family</h2>
+            </div>
+        </div>
+    </div>
+    <div id="div7">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"></div>
+                <div class="swiper-slide"></div>
+                <!-- <div class="swiper-slide"></div>
+                <div class="swiper-slide"></div> -->
+                <div></div>
+
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+     <!-- div 8 -->
+    <div id="div5">
+        <div id="div5child"><img src="https://www.shop.com/feo-cdn/n/S/2fM81rxMM.webp" alt="">
+        </div>
+        <div id="div5child"><img src="https://www.shop.com/feo-cdn/N/7/sE1fOmPhA.jpg" alt="">
+        </div>
+        <div id="div5child"><img src="https://www.shop.com/feo-cdn/P/Z/v0mIpsS9Y.webp" alt="">
+        </div>
+    </div>
+    
+
+</body>
+
+</html>
+<script src="home2.js"></script>
