@@ -1,0 +1,41 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+
+#container{
+    display: flex;
+}
+#sorting{
+    flex: 2;
+    /* height: 300px; */
+    /* background-color: aqua; */
+}
+#category_data{
+    flex: 8;
+    /* height: 300px; */
+    /* background-color: beige; */
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+}
+.cat_cards>img{
+    width: 70%;
+}
+.cat_cards{
+    border: 1px solid black;
+    text-align: center;
+    padding: 8px;
+}
+.cat_cards>h2{
+    font-weight: normal;
+}
+.cat_cards>div>i{
+    color: gold;
+}
+.cat_cards>.cat_price{
+    font-size: 23px;
+    font-weight: bold;
+}
+
