@@ -319,6 +319,11 @@ const append_div17 = (data)=>{
     data.forEach((el)=>{
         let div = document.createElement("div");
             div.setAttribute("class","swiper-slide");
+            div.onclick=()=>{
+                console.log(el)
+                localStorage.setItem("swiped_data", JSON.stringify(el))
+                window.location.href="swipedPage.html"
+            }
             let image = document.createElement("img");
             image.src = el.image;
             let name = document.createElement("h2")
