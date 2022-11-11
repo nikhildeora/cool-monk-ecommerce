@@ -1,0 +1,124 @@
+#container{
+    width: 95%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+#container>div{
+    text-align: center;
+    padding: 10px;
+}
+#total_price{
+    text-align: center;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+#checkout_btn{
+    background-color: #545871;
+    color: white;
+    margin-left: 37px;
+    border: none;
+    padding: 12px;
+    border-radius: 18px;
+    font-size: 16px;
+    margin-top: 20px;
+}
+#checkout_btn>a{
+    color: white;
+    text-decoration: none;
+}
+/* #container>div img{
+    width: 100%;
+} */
+/* button{
+    padding: 7px;
+    background-color: #545871;
+    color: white;
+} */
+#buttons{
+    /* width: 70%; */
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    /* padding: 10px; */
+}
+@media all and (min-width:320px) and (max-width:1000px){
+    #container{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 25px;
+    }
+    /* .remove_btn {
+        
+        margin-left: 0px;
+       
+    }
+    
+    .show_detail {
+        
+        margin-right: 0px;
+        
+    } */
+}
+
+
+#checkout_btn:hover{
+   cursor: pointer;
+   background-color: #414467;
+}
+
+.cat_cards>img {
+    width: 70%;
+}
+
+.cat_cards {
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    text-align: center;
+    padding: 8px;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center; */
+}
+
+.remove_btn {
+    background-color: #414467;
+    color: white;
+    margin-left: 10%;
+    margin-top: 12px;
+    padding: 12px;
+    border-radius: 20px;
+    font-size: 17px;
+}
+
+.remove_btn:hover{
+    color: #414467;
+    background-color: white;
+}
+.show_detail {
+    background-color: white;
+    margin-right: 10%;
+    margin-bottom: 12px;
+    padding: 12px;
+    border-radius: 20px;
+    font-size: 17px;
+}
+.show_detail:hover{
+    background-color: #414467;
+    color: white;
+}
+
+.cat_cards>h2 {
+    font-weight: normal;
+}
+
+.cat_cards>div>i {
+    color: gold;
+}
+
+.cat_cards>.cat_price {
+    font-size: 23px;
+    font-weight: bold;
+}

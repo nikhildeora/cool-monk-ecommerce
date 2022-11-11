@@ -2,6 +2,7 @@
     display: flex;
     width: 90%;
     margin:auto;
+    margin-top: 45px;
 }
 #left{
     flex:5;
@@ -15,13 +16,32 @@
     width: 100%;
     
 }
-i{
+.items_detail_div i{
     color: gold;
+}
+.items_detail_div>button{
+    background-color: #414467;
+    color: white;
+    padding-top: 2px;
+    border: none;
+    padding: 18px;
+    font-size: 17px;
+    border-radius: 18px;
+}
+#items_price{
+    font-weight: bold;
+    font-size: 25px;
 }
 .style1{
     padding-top: 20px;
 }
-h1{
+#add_to_cart_btn:hover{
+  color: #414467;
+  background-color: white;
+  border: 2px solid #414467;
+  cursor: pointer;
+}
+#reviews h1,#faq h1{
     text-align: center;
     font-display: center;
     background-color: #545871;
@@ -51,7 +71,8 @@ h3{
 
 #like{
     color: skyblue;
-    background-color: rgb(55, 124, 214);   
+    background-color: rgb(55, 124, 214);
+    
     width: 90px;
     height: auto;
     text-align: center;
@@ -65,8 +86,7 @@ h3{
     padding-bottom: 15px;
 }
 
-
-@media only screen and (min-width:0px) and  (max-width:600px){
+@media only screen and (min-width:0px) and  (max-width:750px){
     #container{
     display:block;
     width: 90%;

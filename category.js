@@ -1,8 +1,8 @@
-import navbar from "./components/navbar.js"
+import navbar from "./cmmponents/navbar.js"
 const navbar_div = document.getElementById("navbar")
 navbar_div.innerHTML = navbar()
 
-import footer from "./components/footer.js"
+import footer from "./cmmponents/footer.js"
 const footer_div = document.getElementById("footer")
 footer_div.innerHTML = footer()
 
@@ -2075,6 +2075,11 @@ let Womens = [
 ] 
 
 
+let addedItems=JSON.parse(localStorage.getItem("cartitems")) || [];
+let total_cart_products = document.getElementById("cartitems")
+total_cart_products.innerText = addedItems.length;
+
+
 let category_main = document.getElementById("category_data")
 
 const append_cat_data = (data) => {
@@ -2098,11 +2103,37 @@ const append_cat_data = (data) => {
         let ship = document.createElement("p");
         ship.setAttribute("class", "cat_ship")
         ship.innerText = el.shipping;
+        let show_detail = document.createElement("button")
+        show_detail.setAttribute("class","show_detail")
+        show_detail.innerText = "See Details"
+        show_detail.onclick = ()=>{
+                localStorage.setItem("swiped_data",JSON.stringify(el))
+                window.location.href = "./items_detail.html"
+        }
 
-        div.append(image, name, price, div_star, ship);
+        let add_to_cart = document.createElement("button")
+        add_to_cart.setAttribute("class","add_to_cart")
+        add_to_cart.innerText = "Add To Cart"
+        add_to_cart.onclick = ()=>{
+            addedItems.push(el)
+            total_cart_products.innerText = addedItems.length;
+            localStorage.setItem("cartitems",JSON.stringify(addedItems))
+        }
+
+        div.append(image, name, price, div_star, ship,show_detail,add_to_cart);
         category_main.append(div);
     });
 }
+
+
+// let addedItems=JSON.parse(localStorage.getItem("cartitems")) || [];
+// addedItems.push(el)
+// localStorage.setItem("cartitems",JSON.stringify(addedItems))
+
+
+// cart length 
+
+
 
 // append_cat_data(mens)
 
@@ -2136,3 +2167,539 @@ function category_append(){
 }
 
 category_append()
+
+// sorting js 
+
+let a_to_z = document.getElementById("AtoZ")
+let z_to_a = document.getElementById("ZtoA")
+let g_rate = document.getElementById("Good_rate")
+let h_to_l = document.getElementById("high_to_low")
+let l_to_h = document.getElementById("low_to_high")
+let g_4000 = document.getElementById("greater_4000")
+let l_4000 = document.getElementById("lesser_4000")
+
+
+// a to z functionality 
+a_to_z.onclick = ()=>{
+    if(call_category=="mens"){
+       let me_arr =  mens.sort(function(a,b){
+            if(a.name>b.name){
+                return 1;
+            }
+            else if(a.name<b.name){
+                return -1;
+            }
+            else{
+                return 0;
+            }
+        })
+        append_cat_data(mens)
+    }
+    else if(call_category=="womens"){
+        let me_arr =  Womens.sort(function(a,b){
+            if(a.name>b.name){
+                return 1;
+            }
+            else if(a.name<b.name){
+                return -1;
+            }
+            else{
+                return 0;
+            }
+        })
+        append_cat_data(Womens)
+    }
+    else if(call_category=="beauty"){
+        let me_arr =  beauty_products.sort(function(a,b){
+            if(a.name>b.name){
+                return 1;
+            }
+            else if(a.name<b.name){
+                return -1;
+            }
+            else{
+                return 0;
+            }
+        })
+        append_cat_data(beauty_products)
+    }
+    else if(call_category=="electronics"){
+        let me_arr =  electronics.sort(function(a,b){
+            if(a.name>b.name){
+                return 1;
+            }
+            else if(a.name<b.name){
+                return -1;
+            }
+            else{
+                return 0;
+            }
+        })
+        append_cat_data(electronics)
+    }
+    else if(call_category=="jewellery"){
+        let me_arr =  jewellery.sort(function(a,b){
+            if(a.name>b.name){
+                return 1;
+            }
+            else if(a.name<b.name){
+                return -1;
+            }
+            else{
+                return 0;
+            }
+        })
+        append_cat_data(jewellery)
+    }
+    else if(call_category=="kids"){
+        let me_arr =  kids.sort(function(a,b){
+            if(a.name>b.name){
+                return 1;
+            }
+            else if(a.name<b.name){
+                return -1;
+            }
+            else{
+                return 0;
+            }
+        })
+        append_cat_data(kids)
+    }
+    else if(call_category=="videogame"){
+        let me_arr =  videoGame_arr.sort(function(a,b){
+            if(a.name>b.name){
+                return 1;
+            }
+            else if(a.name<b.name){
+                return -1;
+            }
+            else{
+                return 0;
+            }
+        })
+        append_cat_data(videoGame_arr)
+    }
+    else{
+        console.log("nothing");
+    }
+}
+
+
+// z to a functionality 
+z_to_a.onclick = ()=>{
+    if(call_category=="mens"){
+       let me_arr =  mens.sort(function(a,b){
+            if(a.name>b.name){
+                return -1;
+            }
+            else if(a.name<b.name){
+                return 1;
+            }
+            else{
+                return 0;
+            }
+        })
+        append_cat_data(mens)
+    }
+    else if(call_category=="womens"){
+        let me_arr =  Womens.sort(function(a,b){
+            if(a.name>b.name){
+                return -1;
+            }
+            else if(a.name<b.name){
+                return 1;
+            }
+            else{
+                return 0;
+            }
+        })
+        append_cat_data(Womens)
+    }
+    else if(call_category=="beauty"){
+        let me_arr =  beauty_products.sort(function(a,b){
+            if(a.name>b.name){
+                return -1;
+            }
+            else if(a.name<b.name){
+                return 1;
+            }
+            else{
+                return 0;
+            }
+        })
+        append_cat_data(beauty_products)
+    }
+    else if(call_category=="electronics"){
+        let me_arr =  electronics.sort(function(a,b){
+            if(a.name>b.name){
+                return -1;
+            }
+            else if(a.name<b.name){
+                return 1;
+            }
+            else{
+                return 0;
+            }
+        })
+        append_cat_data(electronics)
+    }
+    else if(call_category=="jewellery"){
+        let me_arr =  jewellery.sort(function(a,b){
+            if(a.name>b.name){
+                return -1;
+            }
+            else if(a.name<b.name){
+                return 1;
+            }
+            else{
+                return 0;
+            }
+        })
+        append_cat_data(jewellery)
+    }
+    else if(call_category=="kids"){
+        let me_arr =  kids.sort(function(a,b){
+            if(a.name>b.name){
+                return -1;
+            }
+            else if(a.name<b.name){
+                return 1;
+            }
+            else{
+                return 0;
+            }
+        })
+        append_cat_data(kids)
+    }
+    else if(call_category=="videogame"){
+        let me_arr =  videoGame_arr.sort(function(a,b){
+            if(a.name>b.name){
+                return -1;
+            }
+            else if(a.name<b.name){
+                return 1;
+            }
+            else{
+                return 0;
+            }
+        })
+        append_cat_data(videoGame_arr)
+    }
+    else{
+        console.log("nothing");
+    }
+}
+
+
+// by rating functionality 
+g_rate.onclick = ()=>{
+    if(call_category=="mens"){
+        let me_arr = mens.sort(function(a,b){
+            return b.star-a.star;
+        })
+        append_cat_data(mens)
+    }
+    else if(call_category=="womens"){
+        let me_arr = Womens.sort(function(a,b){
+            return b.star-a.star;
+        })
+        append_cat_data(Womens)
+    }
+    else if(call_category=="beauty"){
+        let me_arr = beauty_products.sort(function(a,b){
+            return b.star-a.star;
+        })
+        append_cat_data(beauty_products)
+    }
+    else if(call_category=="electronics"){
+        let me_arr = electronics.sort(function(a,b){
+            return b.star-a.star;
+        })
+        append_cat_data(electronics)
+    }
+    else if(call_category=="jewellery"){
+        let me_arr = jewellery.sort(function(a,b){
+            return b.star-a.star;
+        })
+        append_cat_data(jewellery)
+    }
+    else if(call_category=="kids"){
+        let me_arr = kids.sort(function(a,b){
+            return b.star-a.star;
+        })
+        append_cat_data(kids)
+    }
+    else if(call_category=="videogame"){
+        let me_arr = videoGame_arr.sort(function(a,b){
+            return b.star-a.star;
+        })
+        append_cat_data(videoGame_arr)
+    }
+    else{
+        console.log("nothing");
+    }
+}
+
+
+// by price high to low 
+h_to_l.onclick = ()=>{
+    if(call_category=="mens"){
+        mens.sort(function(a,b){
+            return b.price-a.price;
+        })
+        append_cat_data(mens)
+    }
+    else if(call_category=="womens"){
+        Womens.sort(function(a,b){
+            return b.price-a.price;
+        })
+        append_cat_data(Womens)
+    }
+    else if(call_category=="beauty"){
+        beauty_products.sort(function(a,b){
+            return b.price-a.price;
+        })
+        append_cat_data(beauty_products)
+    }
+    else if(call_category=="electronics"){
+        electronics.sort(function(a,b){
+            return b.price-a.price;
+        })
+        append_cat_data(electronics)
+    }
+    else if(call_category=="jewellery"){
+        jewellery.sort(function(a,b){
+            return b.price-a.price;
+        })
+        append_cat_data(jewellery)
+    }
+    else if(call_category=="kids"){
+        kids.sort(function(a,b){
+            return b.price-a.price;
+        })
+        append_cat_data(kids)
+    }
+    else if(call_category=="videogame"){
+        videoGame_arr.sort(function(a,b){
+            return b.price-a.price;
+        })
+        append_cat_data(videoGame_arr)
+    }
+    else{
+        console.log("nothing");
+    }
+}
+
+
+
+// low to high price functionality 
+l_to_h.onclick = ()=>{
+    if(call_category=="mens"){
+        mens.sort(function(a,b){
+            return a.price-b.price;
+        })
+        append_cat_data(mens)
+    }
+    else if(call_category=="womens"){
+        Womens.sort(function(a,b){
+            return a.price-b.price;
+        })
+        append_cat_data(Womens)
+    }
+    else if(call_category=="beauty"){
+        beauty_products.sort(function(a,b){
+            return a.price-b.price;
+        })
+        append_cat_data(beauty_products)
+    }
+    else if(call_category=="electronics"){
+        electronics.sort(function(a,b){
+            return a.price-b.price;
+        })
+        append_cat_data(electronics)
+    }
+    else if(call_category=="jewellery"){
+        jewellery.sort(function(a,b){
+            return a.price-b.price;
+        })
+        append_cat_data(jewellery)
+    }
+    else if(call_category=="kids"){
+        kids.sort(function(a,b){
+            return a.price-b.price;
+        })
+        append_cat_data(kids)
+    }
+    else if(call_category=="videogame"){
+        videoGame_arr.sort(function(a,b){
+            return a.price-b.price;
+        })
+        append_cat_data(videoGame_arr)
+    }
+    else{
+        console.log("nothing");
+    }
+}
+
+
+// more than 4000 functionality 
+g_4000.onclick = ()=>{
+    if(call_category=="mens"){
+        let me_arr = mens.filter(function(el){
+            return el.price>4000
+        })
+        append_cat_data(me_arr)
+    }
+    else if(call_category=="womens"){
+        let me_arr = Womens.filter(function(el){
+            return el.price>4000
+        })
+        append_cat_data(me_arr)
+    }
+    else if(call_category=="beauty"){
+        let me_arr = beauty_products.filter(function(el){
+            return el.price>4000
+        })
+        append_cat_data(me_arr)
+    }
+    else if(call_category=="electronics"){
+        let me_arr = electronics.filter(function(el){
+            return el.price>4000
+        })
+        append_cat_data(me_arr)
+    }
+    else if(call_category=="jewellery"){
+        let me_arr = jewellery.filter(function(el){
+            return el.price>4000
+        })
+        append_cat_data(me_arr)
+    }
+    else if(call_category=="kids"){
+        let me_arr = kids.filter(function(el){
+            return el.price>4000
+        })
+        append_cat_data(me_arr)
+    }
+    else if(call_category=="videogame"){
+        let me_arr = videoGame_arr.filter(function(el){
+            return el.price>4000
+        })
+        append_cat_data(me_arr)
+    }
+    else{
+        console.log("nothing");
+    }
+}
+
+
+// less than or equal to 4000 
+l_4000.onclick = ()=>{
+    if(call_category=="mens"){
+        let me_arr = mens.filter(function(el){
+            return el.price<=4000
+        })
+        append_cat_data(me_arr)
+    }
+    else if(call_category=="womens"){
+        let me_arr = Womens.filter(function(el){
+            return el.price<=4000
+        })
+        append_cat_data(me_arr)
+    }
+    else if(call_category=="beauty"){
+        let me_arr = beauty_products.filter(function(el){
+            return el.price<=4000
+        })
+        append_cat_data(me_arr)
+    }
+    else if(call_category=="electronics"){
+        let me_arr = electronics.filter(function(el){
+            return el.price<=4000
+        })
+        append_cat_data(me_arr)
+    }
+    else if(call_category=="jewellery"){
+        let me_arr = jewellery.filter(function(el){
+            return el.price<=4000
+        })
+        append_cat_data(me_arr)
+    }
+    else if(call_category=="kids"){
+        let me_arr = kids.filter(function(el){
+            return el.price<=4000
+        })
+        append_cat_data(me_arr)
+    }
+    else if(call_category=="videogame"){
+        let me_arr = videoGame_arr.filter(function(el){
+            return el.price<=4000
+        })
+        append_cat_data(me_arr)
+    }
+    else{
+        console.log("nothing");
+    }
+}
+
+
+
+// category js 
+
+let mens_cat = document.getElementsByClassName("mens")
+let womens_cat = document.getElementsByClassName("womens")
+let beauty_cat = document.getElementsByClassName("beauty")
+let electronics_cat = document.getElementsByClassName("electronics")
+let jewellery_cat = document.getElementsByClassName("jewellery")
+let kids_cat = document.getElementsByClassName("kids")
+let videogame_cat = document.getElementsByClassName("videogame")
+
+for(let i=0;i<mens_cat.length;i++){
+    mens_cat[i].addEventListener("click",function(){
+        console.log("nikhil");
+        localStorage.setItem("category_call","mens")
+         window.location.href = "category.html"
+    })
+}
+for(let i=0;i<womens_cat.length;i++){
+    womens_cat[i].addEventListener("click",function(){
+        console.log("nikhil");
+        localStorage.setItem("category_call","womens")
+         window.location.href = "category.html"
+    })
+}
+for(let i=0;i<beauty_cat.length;i++){
+    beauty_cat[i].addEventListener("click",function(){
+        console.log("nikhil");
+        localStorage.setItem("category_call","beauty")
+         window.location.href = "category.html"
+    })
+}
+for(let i=0;i<electronics_cat.length;i++){
+    electronics_cat[i].addEventListener("click",function(){
+        console.log("nikhil");
+        localStorage.setItem("category_call","electronics")
+         window.location.href = "category.html"
+    })
+}
+for(let i=0;i<jewellery_cat.length;i++){
+    jewellery_cat[i].addEventListener("click",function(){
+        console.log("nikhil");
+        localStorage.setItem("category_call","jewellery")
+         window.location.href = "category.html"
+    })
+}
+for(let i=0;i<kids_cat.length;i++){
+    kids_cat[i].addEventListener("click",function(){
+        console.log("nikhil");
+        localStorage.setItem("category_call","kids")
+         window.location.href = "category.html"
+    })
+}
+for(let i=0;i<videogame_cat.length;i++){
+    videogame_cat[i].addEventListener("click",function(){
+        console.log("nikhil");
+        localStorage.setItem("category_call","videogame")
+         window.location.href = "category.html"
+    })
+}
+

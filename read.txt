@@ -1,18 +1,1 @@
-unit 3 project 
-
-Project website
-https://www.shop.com/
-
-IA manager
-Anshuman baghi
-
-our group member
-fw20_0060 - Rohan Saini
-fw21_0435 - akarsha bhardwaj
-fw21_0534 - utkarsh sinha
-fw21_0842 - surya prakash pokhriyal
-fw21_1068 - nikhil deora
-
-Our Project code 
-delightful-secretary-78
-
+sample repo

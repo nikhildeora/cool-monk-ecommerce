@@ -1,12 +1,11 @@
 function footer(){
     return `
-    <div id="footer">
         <div id="footer_first">
     <div id="ff_left">
     <input type="text" placeholder="FEEDBACK" id="feedback">
     <button id="feedbackbtn">SUBMIT</button>
     <!-- <BR></BR> -->
-    <button id="signup"><a href="">FEEL FREE TO SIGNUP</a></button>
+    <button id="signup"><a href="#">FEEL FREE TO SIGNUP</a></button>
     
     </div>
     <div id="ff_right">
@@ -64,7 +63,7 @@ function footer(){
     
     
         </div>
-    </div>`
+    `
 }
 
 export default footer 

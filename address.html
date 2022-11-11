@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/24c494a6b6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/nav_fot.css">
+    <title>payment page</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        header{
+            /* width: 100%; */
+            min-height: 100vh;
+            background: #ebeef5;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .pay-container{
+            background: white;
+            width: 30%;
+            
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 0.5rem 1.5rem;
+            border-radius: 5px;
+        }
+        .left{
+            flex-basis: 100%;
+        }
+        
+        #paymentform{
+            padding: 1rem ;
+            font-family: sans-serif;
+        }
+        .pay-container h3{
+            margin-top: 1rem;
+            color: #2c3e50;
+            text-align: center;
+            
+
+        }
+        #paymentform input[type="text"]{
+            width: 100%;
+            padding: 0.5rem 0.7rem;
+            margin: 0.5rem 0;
+            outline: none;
+        }
+        #zip{
+            display: flex;
+            margin-top: 0.5rem;
+        }
+        #zip select{
+            padding: 0.5rem 0.7rem;
+        }
+        #zip input[type="number"]{
+            margin-left: 5px;
+            padding: 0.5rem 0.7rem;
+        }
+        .pay-container button{
+            
+        margin-top: 20px;
+        margin-left: 40%;
+        padding: 10px 15px;
+        font-size: 15px;
+        font-weight: 600;
+        border-radius: 5px;
+        border: 0px;
+        background-color: #34495e;
+        color: white;
+
+        }
+        .pay-container button:hover{
+            background-color: #2c3e50;
+            color: white;
+            font-weight: 500;
+            transform: scale(1.2);
+            border: 0px;
+            border-radius: 8px;
+            cursor: pointer;
+
+        }
+
+
+        
+    </style>
+</head>
+<body>
+    <div id="navbar"></div>
+
+
+    <header>
+        <div class="pay-container" >
+            <div class="left">
+                <h3>BILLING ADDRESS</h3>
+                <form id="paymentform" action="">Full name
+                    <input id="name" type="text" name="" placeholder="Enter name">
+                    Email
+                    <input id="email" type="text" name="" placeholder="Enter email">
+                    Address
+                    <input id="address" type="text" name="" placeholder="Enter address">
+                    City
+                    <input id="city" type="text" name="" placeholder="Enter city">
+
+                    <div id="zip">
+                        <label for="">
+                            State
+                            <select  name="" id="state">
+                                <option value="">Choose State..</option>
+                                <option value="Rajasthan">Rajasthan</option>
+                                <option value="Jharkhand">Jharkhand</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                <option value="Haryana">Haryana</option>
+                                <option value="Gujrat">Gujrat</option>
+                                <option value="Uttrakhand">Uttrakhand</option>
+                                <option value="New Delhi">New Delhi</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                                <option value="Karnataka">Karnataka</option>
+                                <option value="Nagaland">Nagaland</option>
+                                <option value="Meghalaya">Meghalaya</option>
+                                <option value="Punjab">Punjab</option>
+                                <option value="Tamil Nadu">Tamil Nadu</option>
+                            </select>
+                        </label>
+                        <label for="">
+                            Pincode
+                            <input id="pincode" type="number" placeholder="Pincode">
+                        </label>
+                       
+                        
+                        
+                    </div>
+                    <button id="submit_btn">Submit</button>
+                    
+                    
+                    
+
+                </form>
+            </div>
+            
+        </div>
+    </header>
+
+    <div id="footer"></div>
+</body>
+</html>
+<script type="module">
+    import navbar from "./cmmponents/navbar.js"
+let navbar_div = document.getElementById("navbar")
+navbar_div.innerHTML = navbar()
+
+import footer from "./cmmponents/footer.js"
+let footer_div = document.getElementById("footer")
+footer_div.innerHTML = footer()
+
+
+// all Id 
+// name , email , address , city ,  state , pincode
+let form = document.getElementById("paymentform")
+
+let submit_btn = document.getElementById("submit_btn")
+submit_btn.onclick = (event)=>{
+    event.preventDefault()
+
+    let obj ={
+        name : form.name.value,
+        email : form.email.value,
+        address : form.address.value,
+        city : form.city.value,
+        state : form.state.value,
+        pincode : form.pincode.value
+    }
+
+    if(obj.name==""||obj.email==""||obj.address==""||obj.city==""||obj.state==""||obj.pincode==""){
+        alert("Please fill Complete Address")
+    }
+    else{
+        form.name.value = ""
+        form.email.value = ""
+        form.address.value = ""
+        form.city.value = ""
+        form.city.value = ""
+        form.pincode.value = ""
+        
+        // console.log(obj);
+        localStorage.setItem("billing_address",JSON.stringify(obj))
+        window.location.href = "./payment.html"
+    }
+}
+
+// cart length 
+let addedItems=JSON.parse(localStorage.getItem("cartitems")) || [];
+let total_cart_products = document.getElementById("cartitems")
+total_cart_products.innerText = addedItems.length;
+</script>

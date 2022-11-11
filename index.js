@@ -1,8 +1,8 @@
-import navbar from "./components/navbar.js"
+import navbar from "./cmmponents/navbar.js"
 const navbar_div = document.getElementById("navbar")
 navbar_div.innerHTML = navbar()
 
-import footer from "./components/footer.js"
+import footer from "./cmmponents/footer.js"
 const footer_div = document.getElementById("footer")
 footer_div.innerHTML = footer()
 
@@ -68,6 +68,10 @@ const append_div4_first = (data) => {
         // console.log(el);
         let div = document.createElement("div");
         div.setAttribute("class", "swiper-slide");
+        div.onclick = ()=>{
+            localStorage.setItem("swiped_data",JSON.stringify(el))
+            window.location.href = "./items_detail.html"
+        }
         let image = document.createElement("img");
         image.src = el.image;
         let name = document.createElement("h2")
@@ -176,6 +180,10 @@ const append_medicine = (data) => {
     data.forEach((el) => {
         let div = document.createElement("div");
         div.setAttribute("class", "swiper-slide");
+        div.onclick = ()=>{
+            localStorage.setItem("swiped_data",JSON.stringify(el))
+            window.location.href = "./items_detail.html"
+        }
         let image = document.createElement("img");
         image.src = el.image;
         let name = document.createElement("h2")
@@ -318,6 +326,10 @@ const append_div10_second = (data) => {
     data.forEach((el) => {
         let div = document.createElement("div");
         div.setAttribute("class", "swiper-slide");
+        div.onclick = ()=>{
+            localStorage.setItem("swiped_data",JSON.stringify(el))
+            window.location.href = "./items_detail.html"
+        }
         let image = document.createElement("img");
         image.src = el.image;
         let name = document.createElement("h2")
@@ -457,6 +469,10 @@ const append_div11_first = (data) => {
         // console.log(el);
         let div = document.createElement("div");
         div.setAttribute("class", "swiper-slide");
+        div.onclick = ()=>{
+            localStorage.setItem("swiped_data",JSON.stringify(el))
+            window.location.href = "./items_detail.html"
+        }
         let image = document.createElement("img");
         image.src = el.image;
         let name = document.createElement("h2")
@@ -595,6 +611,10 @@ const append_div12_second = (data) => {
     data.forEach((el) => {
         let div = document.createElement("div");
         div.setAttribute("class", "swiper-slide");
+        div.onclick = ()=>{
+            localStorage.setItem("swiped_data",JSON.stringify(el))
+            window.location.href = "./items_detail.html"
+        }
         let image = document.createElement("img");
         image.src = el.image;
         let name = document.createElement("h2")
@@ -711,6 +731,10 @@ const append_div14 = (data) => {
     data.forEach(el => {
         let div = document.createElement("div");
         div.setAttribute("class", "div14_cards");
+        div.onclick = ()=>{
+            localStorage.setItem("swiped_data",JSON.stringify(el))
+            window.location.href = "./items_detail.html"
+        }
         let image = document.createElement("img");
         image.src = el.image;
         let name = document.createElement("h2")
@@ -811,6 +835,10 @@ const append_div16 = (data) => {
     data.forEach(el => {
         let div = document.createElement("div");
         div.setAttribute("class", "div16_cards");
+        div.onclick = ()=>{
+            localStorage.setItem("swiped_data",JSON.stringify(el))
+            window.location.href = "./items_detail.html"
+        }
         let image = document.createElement("img");
         image.src = el.image;
         let name = document.createElement("h2")
@@ -952,8 +980,11 @@ let swipper_div = document.querySelector("#div17>#div17_main>.mySwiper>.swiper-w
 const append_div17 = (data) => {
     data.forEach((el) => {
         let div = document.createElement("div");
-
         div.setAttribute("class", "swiper-slide");
+        div.onclick = ()=>{
+            localStorage.setItem("swiped_data",JSON.stringify(el))
+            window.location.href = "./items_detail.html"
+        }
         let image = document.createElement("img");
         image.src = el.image;
         let name = document.createElement("h2")
@@ -973,33 +1004,6 @@ const append_div17 = (data) => {
 
         div.append(image, name, price, div_star, ship);
         swipper_div.append(div);
-
-            // div.setAttribute("class","swiper-slide");
-            // div.onclick=()=>{
-            //     console.log(el)
-            //     localStorage.setItem("swiped_data", JSON.stringify(el))
-            //     window.location.href="swipedPage.html"
-            // }
-            // let image = document.createElement("img");
-            // image.src = el.image;
-            // let name = document.createElement("h2")
-            // name.innerText = el.name;
-            // let price = document.createElement("p")
-            // price.setAttribute("class","div17_price")
-            // price.innerText = el.price;
-            // let div_star = document.createElement("div")
-            // for(let i=0;i<el.star;i++){
-            //     let star = document.createElement("i")
-            //     star.setAttribute("class","fa-solid fa-star")
-            //     div_star.append(star)
-            // }
-            // let ship = document.createElement("p");
-            // ship.setAttribute("class","div17_ship")
-            // ship.innerText = el.shipping;
-    
-            // div.append(image,name,price,div_star,ship);
-            // swipper_div.append(div);
-
     })
 }
 
@@ -1117,3 +1121,10 @@ for(let i=0;i<videogame_cat.length;i++){
     })
 }
 
+
+
+
+// cart length 
+let addedItems=JSON.parse(localStorage.getItem("cartitems")) || [];
+let total_cart_products = document.getElementById("cartitems")
+total_cart_products.innerText = addedItems.length;

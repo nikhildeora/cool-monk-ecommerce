@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <link rel="stylesheet" href="styles/nav_fot.css">
+    <script src="https://kit.fontawesome.com/1fedb2eabf.js" crossorigin="anonymous"></script>
+    
+    <style>
+        *{
+            /* width: 70%;
+            height: auto;
+            margin: auto; */
+            padding: 0px;
+            margin: 0px;
+            /* text-align: center; */
+        }
+        #signup_form{
+            width: 100%;
+            display: grid;
+            margin: auto;
+            margin-top: 50px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            border-radius: 15px;
+            border: 2px solid rgb(215, 215, 233);
+            background-color: #545871;
+            color: white;
+            font-size: 25px;
+        }
+        #signup_div{
+             width: 30%;
+             margin: auto;
+            padding: 10px;
+            margin-top: 42px;
+            margin-bottom: 35px;
+            /* border: 1px solid black; */
+            /* margin: 0px; */
+            /* text-align: center; */
+        }
+        #signup_form input, #signup_form label,#eye{
+            padding: 12px;
+            margin: 0px 23px 0px 23px;
+            /* margin: auto; */
+        }
+        #signup_button{
+            background-color: white;
+            color: #545871;
+            padding: 10px;
+            font-size: 22px;
+            border: 1px solid black;
+            margin: 0px 23px 10px 23px;
+        }
+        #signup_button:hover{
+            background-color: #545871;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar"></div>
+    
+    <div id="signup_div">
+        <form action="" id="signup_form">
+            <div style="text-align: center">Sign Up</div>
+            <label for="">Full Name</label> 
+            <input id="name" type="text" placeholder="Ente your full name" required>
+            <label for="">Email</label>
+            <input id="email" type="text" placeholder="Email" required>
+            <label for="">Password</label> 
+            <input id="pwd" type="password" placeholder="Password"><span><i class="fa-solid fa-eye" id="eye" ></i></span>
+            <button id="signup_button">SIGN UP</button> 
+                     
+        </form>
+        <p>Already have an account? <a href="login.html"> Sign In<span style="color: blue"></span> </a> </p>
+    </div>
+   
+
+    <div id="footer"></div>
+</body>
+</html>
+<script type="module">
+    import navbar from "./cmmponents/navbar.js"
+let navbar_div = document.getElementById("navbar")
+navbar_div.innerHTML = navbar()
+
+import footer from "./cmmponents/footer.js"
+let footer_div = document.getElementById("footer")
+footer_div.innerHTML = footer()
+
+
+    let form= document.querySelector("form")
+    form.addEventListener("submit", store);
+    let signupArr= JSON.parse(localStorage.getItem("signup")) ||[]
+    
+    function store(event){
+        event.preventDefault()
+        let obj={
+         username :document.querySelector("#name").value,
+         email: document.querySelector("#email").value,
+         password: document.querySelector("#pwd").value,
+        }
+        // storeData(obj)
+        check_api(obj)
+    }
+
+    async function check_api(obj){
+        try{
+            let res = await fetch(`https://powerful-savannah-17761.herokuapp.com/details`)
+            let data = res.json()
+            data.then((jhs)=>{
+                let check = 0;
+                jhs.forEach(el => {
+                    // console.log(el);
+                    if(obj.email==el.email){
+                        check++
+                    }
+                });
+                if(check>0){
+                    alert("We Already have an Account with this Email Id")
+                }
+                else{
+                    storeData(obj)
+                }
+            })       
+        }     
+        catch(er){
+            console.log(er);
+        }
+    }
+
+    async function storeData(details){
+       try{
+        let res= await fetch (`https://powerful-savannah-17761.herokuapp.com/details`,{
+            method: 'POST',
+            body: JSON.stringify(details),
+            headers: {
+                'Content-Type': 'application/json'
+            }           
+        })
+        let data= await res.json()
+        console.log(data)
+        window.location.href="./login.html"
+    }catch(err){
+        console.log(err)
+    }
+    }
+    let state=false;
+    // onclick="toggle()"
+    let eye = document.getElementById("eye")
+    eye.addEventListener("click",toggle)
+    function toggle(){
+        if(state){
+            document.getElementById("pwd").setAttribute("type", "password")
+            document.getElementById("eye").style.color="#7a797e"
+            state=false;
+        }
+        else{
+            document.getElementById("pwd").setAttribute("type", "text")
+            document.getElementById("eye").style.color="#5887ef"
+            state=true;
+        }
+    }
+</script>

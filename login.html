@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/nav_fot.css">
+    <title>Login Page</title>
+    
+    <script src="https://kit.fontawesome.com/1fedb2eabf.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            
+            
+            padding: 0px;
+            margin: 0px;
+            /* color: black; */
+        }
+        #login_div{
+             width: 30%;
+             margin: auto;
+            padding: 10px;
+            margin-top: 42px;
+            margin-bottom: 35px;
+            /* border: 1px solid black; */
+            /* margin: 0px; */
+            /* text-align: center; */
+        }
+        #login{
+            width: 100%;
+            display: grid;
+            margin: auto;
+            margin-top: 50px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            border-radius: 15px;
+            border: 2px solid rgb(215, 215, 233);
+            background-color: #545871;
+            color: white;
+            font-size: 25px;
+        }
+
+        #login input, #login label,#eye{
+            padding: 12px;
+            margin: 0px 23px 0px 23px;
+            /* margin: auto; */
+        }
+        #login_button{
+            background-color: white;
+            color: #545871;
+            padding: 10px;
+            font-size: 22px;
+            border: 1px solid black;
+            margin: 0px 23px 10px 23px;
+        }
+        #login_button:hover{
+            background-color: #545871;
+            color: white;
+            cursor: pointer;
+        }
+        @media all and (min-width:0px) and (max-width: 600px){
+            #login{
+            width: 95%;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+   <div id="navbar"></div>
+
+   <div id="login_div">
+    <form action="" id="login">
+        <div style="text-align: center">Sign In</div>
+        <label for="">Email</label>
+        <input type="text"  id="em" placeholder="Your Email">
+        <label for="" >Password</label> 
+        <input id="p" type="password" placeholder="Your Password"><span><i class="fa-solid fa-eye" id="eye" ></i></span>
+        <button id="login_button">Sign In</button>
+    </form>
+    <p>Not have an account? <a href="signup.html"> Sign Up<span style="color: blue"></span> </a> </p>
+   </div>
+   
+
+    <div id="footer"></div>
+</body>
+</html>
+<script type="module">
+      import navbar from "./cmmponents/navbar.js"
+let navbar_div = document.getElementById("navbar")
+navbar_div.innerHTML = navbar()
+
+import footer from "./cmmponents/footer.js"
+let footer_div = document.getElementById("footer")
+footer_div.innerHTML = footer()
+
+    let form= document.querySelector("form")
+    form.addEventListener("submit", myfun);
+    
+    // let loginItem= JSON.parse(localStorage.getItem("signup"))||[]
+    async function check(useremail, userpwd){
+        let res= await fetch(`https://powerful-savannah-17761.herokuapp.com/details`)
+        let data=await res.json()
+       
+        console.log(data)
+        let flag = false;
+        data.forEach(function(el){
+
+        if((el.email==useremail) && (el.password==userpwd))
+        flag=true
+       })
+
+       if (flag){
+        alert("Login Successful");
+        window.location.href="index.html"
+       } else {
+        alert("Please fill the valid details");
+       }
+    }
+    function myfun(event) {
+        event.preventDefault();
+        let useremail= document.querySelector("#em").value
+        let userpwd= document.querySelector("#p").value
+        check(useremail, userpwd)
+        console.log("userEmail",useremail,"UserPassword",userpwd)
+    }
+    let state=false;
+
+    // onclick="toggle()"
+    let eye = document.getElementById("eye")
+    eye.addEventListener("click",toggle)
+    function toggle(){
+        if(state){
+            document.getElementById("p").setAttribute("type", "password")
+            document.getElementById("eye").style.color="#7a797e"
+            state=false;
+        }
+        else{
+            document.getElementById("p").setAttribute("type", "text")
+            document.getElementById("eye").style.color="#5887ef"
+            state=true;
+        }
+    }
+
+</script>

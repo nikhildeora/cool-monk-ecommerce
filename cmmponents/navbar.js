@@ -6,8 +6,9 @@ function navbar(){
                 </a>
 
                 <div id="signin">
-                    <button>LOGIN</button>
-                    <button>SIGNUP</button>
+                <a href="login.html"><button>LOGIN</button></a>
+                <a href="signup.html"><button>SIGNUP</button></a>   
+                    
                 </div>
             </div>
             <div id="bottom">
@@ -33,11 +34,14 @@ function navbar(){
                     <a href="#" class="jewellery">JEWELLERY</a>
                     <a href="#" class="videogame">VIDEO GAMES</a>
                 </div>
+                <a id="cart_href" href="cart.html">
                 <div id="cart">
                     <i id="cart_i" class="fa-solid fa-cart-shopping"></i>
                     <span id="cart_span">Cart</span>
                     <span id="cartitems">0</span>
                 </div>
+                </a>
+                
             </div>
      `
 }
