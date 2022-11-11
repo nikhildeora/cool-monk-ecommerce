@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+    <style>
+        #container{
+            width: 80%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 30px;
+        }
+        #container>div{
+            text-align: center;
+            padding: 10px;
+        }
+        #container>div img{
+            width: 100%;
+        }
+        button{
+            padding: 7px;
+            background-color: #545871;
+            color: white;
+        }
+        #buttons{
+            width: 70%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+        @media all and (min-width:320px) and (max-width:1000px){
+            #container{
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(1,1fr);
+                gap: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar"></div>
+    <button id="checkout_btn"><a href="checkout.html">Move to checkout</a></button>
+    <h1>Total Price</h1><span id="total">0</span>
+    <div id="container"></div>
+    <div id="footer"></div>
+</body>
+</html>
+<script type="module">
+    import navbar from "./cmmponents/navbar.js"
+const navbar_div = document.getElementById("navbar")
+navbar_div.innerHTML = navbar()
+
+import footer from "./cmmponents/footer.js"
+const footer_div = document.getElementById("footer")
+footer_div.innerHTML = footer()
+
+
+
+    // function to set items in local storage
+    let btn=document.getElementById("cart_btn")
+    btn.addEventListener("click",()=>{
+function addItems(el);
+    })
+    let Addcart=[];
+    function addItems(el){
+Addcart.push(el);
+localStorage.setItem("cartitems",JSON.stringify(Addcart))
+    }
+
+    //function for cart page
+    let addedItems=JSON.parse(localStorage.getItem("cartitems"))
+    let sum=addedItems.reduce(function(el,acc){
+        return acc+el.price
+    },0);
+
+    document.getElementById('total').innerText=sum;
+    const appendItems=(addedItems)=>{
+        let container=document.getElementById("container")
+        container.innerHTML=null;
+        addedItems.forEach(function(el,index){
+            let div=document.createElement('div')
+            let img=document.createElement('img')
+            let name=document.createElement('h2')
+            let desc=document.createElement('p')
+            let price=document.createElement('h2')
+            let delete_btn=document.createElement('button')
+            let see_details=document.createElement('button')
+            let btn_div=document.createElement('div')
+            btn_div.id='buttons'
+
+            img.src=el.image;
+            name.innerText=el.name;
+            desc.innerText=el.desc;
+            price.innerText=el.price
+            delete_btn.innerText='Remove From Cart'
+            see_details.innerText='See Details'
+
+            delete_btn.addEventListener("click",()=>{
+                deleteProducts(el,index)
+            })
+
+            btn_div.append(delete_btn,see)
+
+            div.append(img,name,price,desc,btn_div)
+            container.append(div)
+
+        })
+    }
+
+
+    function deleteProducts(el,index)
+    {
+      addedItems.splice(index,1)
+      appendItems(addedItems)
+      let sum=addedItems.reduce(function(el,acc){
+        return acc+el.price
+    },0);
+      document.getElementById('total').innerText=sum;
+      localStorage.setItem("cartitems",JSON.stringify(addedItems))  
+    }
+</script>
