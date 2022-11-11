@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>payment page</title>
+    <style>
+        header{
+            width: 100vw;
+            min-height: 100vh;
+            background: #34495e;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .pay-container{
+            background: white;
+            width: 30%;
+            
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 0.5rem 1.5rem;
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border: 2px solid orangered;
+        }
+        .left{
+            flex-basis: 100%;
+        }
+        
+        #paymentform{
+            padding: 1rem ;
+            font-family: sans-serif;
+        }
+        .pay-container h3{
+            margin-top: 1rem;
+            color: #2c3e50;
+            text-align: center;
+            
+
+        }
+        #paymentform input[type="text"]{
+            width: 90%;
+            padding: 0.5rem 0.7rem;
+            margin: 0.5rem 0;
+            outline: none;
+        }
+        #zip{
+            display: flex;
+            margin-top: 0.5rem;
+        }
+        #zip select{
+            padding: 0.5rem 0.7rem;
+        }
+        #zip input[type="number"]{
+            margin-left: 5px;
+            padding: 0.5rem 0.7rem;
+        }
+        .pay-container button{
+            
+        margin-top: 20px;
+        margin-left: 40%;
+        padding: 10px 15px;
+        font-size: 15px;
+        font-weight: 600;
+        border-radius: 5px;
+        border: 0px;
+        background-color: blue;
+        color: white;
+
+        }
+        .pay-container button:hover{
+            background-color: #2c3e50;
+            color: white;
+            font-weight: 500;
+            transform: scale(1.2);
+            border: 0px;
+            border-radius: 8px;
+            cursor: pointer;
+
+        }
+        @media all and (min-width:320px) and (max-width:1100px){
+            .left{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+            }
+            #zip{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+            }
+            #zip input{
+                margin-top: 5px;
+                width: 100%;
+            }
+            #zip select{
+                margin-bottom: 5px;
+            }
+            
+
+            .left button{
+                text-align: center;
+                margin-left: 30%;
+            }
+
+
+        }
+
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="pay-container" >
+            <div class="left">
+                <h3>BILLING ADDRESS</h3>
+                <span id="paymentform" action="">
+                    Full name
+                    <input type="text" name="" placeholder="Enter name">
+                    Email
+                    <input type="text" name="" placeholder="Enter email">
+                    Address
+                    <input type="text" name="" placeholder="Enter address">
+                    City
+                    <input type="text" name="" placeholder="Enter city">
+
+                    <div id="zip">
+                        <label for="">
+                            State
+                            <select name="" id="">
+                                <option value="">Choose State..</option>
+                                <option value="">Rajasthan</option>
+                                <option value="">Jharkhand</option>
+                                <option value="">Delhi</option>
+                                <option value="">Uttar Pradesh</option>
+                                <option value="">Haryana</option>
+                                <option value="">Gujrat</option>
+                                <option value="">Uttrakhand</option>
+                                <option value="">New Delhi</option>
+                                <option value="">Maharashtra</option>
+                                <option value="">Karnataka</option>
+                                <option value="">Nagaland</option>
+                                <option value="">Meghalaya</option>
+                                <option value="">Punjab</option>
+                                <option value="">Tamil Nadu</option>
+                            </select>
+                        </label>
+                        <label for="">
+                            Pincode
+                            <input type="number" placeholder="Pincode">
+                        </label>
+                       
+                        
+                        
+                    </div>
+                    <button id="details-submit">Submit</button>
+                    
+                    
+                    
+
+                </span>
+            </div>
+            
+        </div>
+    </header>
+</body>
+</html>
+<script src="./address.js"></script>
