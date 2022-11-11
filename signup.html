@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <script src="https://kit.fontawesome.com/1fedb2eabf.js" crossorigin="anonymous"></script>
+    
+    <style>
+        *{
+            width: 70%;
+            height: auto;
+            margin: auto;
+            padding: 10px;
+            /* text-align: center; */
+        }
+        #signup{
+            width: 60%;
+            display: grid;
+            color: white;
+            margin-top: 50px;
+            text-align: left;
+            padding-top: 10px;
+            /* align-content: flex-start; */
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            border-radius: 15px;
+            border: 2px solid rgb(215, 215, 233);
+            
+            background-color: #545871;
+        }
+    </style>
+</head>
+<body>
+    
+    <form action="" id="signup">
+        <div style="text-align: center">Sign Up</div>
+        <label for="">Full Name</label> 
+        <input id="name" type="text" placeholder="Ente your full name" required>
+        <label for="">Email</label>
+        <input id="email" type="text" placeholder="Email" required>
+        <label for="">Password</label> 
+        <input id="pwd" type="password" placeholder="Password"><span><i class="fa-solid fa-eye" id="eye" onclick="toggle()"></i></span>
+        <button>SIGN UP</button> 
+                 
+    </form>
+    <p>Already have an account? <a href="loginpage.html"> Sign In<span style="color: blue"></span> </a> </p>
+</body>
+</html>
+<script>
+    let form= document.querySelector("form")
+    form.addEventListener("submit", store);
+    let signupArr= JSON.parse(localStorage.getItem("signup")) ||[]
+    
+    function store(event){
+        event.preventDefault()
+        let obj={
+         username :document.querySelector("#name").value,
+         email: document.querySelector("#email").value,
+         password: document.querySelector("#pwd").value,
+        }
+        storeData(obj)
+    }
+    async function storeData(details){
+       try{
+        let res= await fetch (`https://powerful-savannah-17761.herokuapp.com/details`,{
+            method: 'POST',
+            body: JSON.stringify(details),
+            headers: {
+                'Content-Type': 'application/json'
+            }           
+        })
+        let data= await res.json()
+        console.log(data)
+        window.location.href="loginpage.html"
+    }catch(err){
+        console.log(err)
+    }
+    }
+    let state=false;
+    function toggle(){
+        if(state){
+            document.getElementById("pwd").setAttribute("type", "password")
+            document.getElementById("eye").style.color="#7a797e"
+            state=false;
+        }
+        else{
+            document.getElementById("pwd").setAttribute("type", "text")
+            document.getElementById("eye").style.color="#5887ef"
+            state=true;
+        }
+    }
+</script>

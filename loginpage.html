@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    
+    <script src="https://kit.fontawesome.com/1fedb2eabf.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            
+            width: 70%;
+            height: auto;
+            margin: auto;
+            padding: 10px;
+            /* color: black; */
+        }
+        #login{
+            width: 60%;
+            display: grid;
+            margin: center;
+            margin-top: 50px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            border-radius: 15px;
+            border: 2px solid rgb(215, 215, 233);
+            background-color: #545871;
+            color: white;
+        }
+    
+        
+        @media all and (min-width:0px) and (max-width: 600px){
+            #login{
+            width: 95%;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <form action="" id="login">
+        <div style="text-align: center">Sign In</div>
+        <label for="">Email</label>
+        <input type="text"  id="em">
+        <label for="" >Password</label> 
+        <input id="p" type="password"><span><i class="fa-solid fa-eye" id="eye" onclick="toggle()"></i></span>
+        <button>Sign In</button>
+    </form>
+    <p>Not have an account? <a href="signup.html"> Sign Up<span style="color: blue"></span> </a> </p>
+</body>
+</html>
+<script>
+    let form= document.querySelector("form")
+    form.addEventListener("submit", myfun);
+    
+    // let loginItem= JSON.parse(localStorage.getItem("signup"))||[]
+    async function check(useremail, userpwd){
+        let res= await fetch(`https://powerful-savannah-17761.herokuapp.com/details`)
+        let data=await res.json()
+       
+        console.log(data)
+        let flag = false;
+        data.forEach(function(el){
+
+        if((el.email==useremail) && (el.password==userpwd))
+        flag=true
+       })
+
+       if (flag){
+        alert("Login Successful");
+        window.location.href="index.html"
+       } else {
+        alert("Please fill the valid details");
+       }
+    }
+    function myfun(event) {
+        event.preventDefault();
+        let useremail= document.querySelector("#em").value
+        let userpwd= document.querySelector("#p").value
+        check(useremail, userpwd)
+        console.log("userEmail",useremail,"UserPassword",userpwd)
+    }
+    let state=false;
+    function toggle(){
+        if(state){
+            document.getElementById("p").setAttribute("type", "password")
+            document.getElementById("eye").style.color="#7a797e"
+            state=false;
+        }
+        else{
+            document.getElementById("p").setAttribute("type", "text")
+            document.getElementById("eye").style.color="#5887ef"
+            state=true;
+        }
+    }
+
+</script>
