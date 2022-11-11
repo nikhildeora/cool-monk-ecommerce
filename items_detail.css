@@ -1,0 +1,111 @@
+#container{
+    display: flex;
+    width: 90%;
+    margin:auto;
+    margin-top: 45px;
+}
+#left{
+    flex:5;
+    width: 100%;
+    justify-content: center;
+   
+}
+#right{
+    flex:5;
+    display: block;
+    width: 100%;
+    
+}
+.items_detail_div i{
+    color: gold;
+}
+.items_detail_div>button{
+    background-color: #414467;
+    color: white;
+    padding-top: 2px;
+    border: none;
+    padding: 18px;
+    font-size: 17px;
+    border-radius: 18px;
+}
+#items_price{
+    font-weight: bold;
+    font-size: 25px;
+}
+.style1{
+    padding-top: 20px;
+}
+#reviews h1,#faq h1{
+    text-align: center;
+    font-display: center;
+    background-color: #545871;
+    height: 50px;
+    font-weight: bold;
+    font-size: 40px;
+    color: white;
+    padding-top: 15px;
+}
+h3{
+    line-height: 18px;   
+}
+#reviews{
+    width:95%;
+    margin: auto;
+    padding: 20px;
+    line-height: 25px;
+    letter-spacing: 0.8px;
+}
+#faq{
+    width:95%;
+    margin: auto;
+    padding: 20px;
+    line-height: 25px;
+    letter-spacing: 0.8px;
+}
+
+#like{
+    color: skyblue;
+    background-color: rgb(55, 124, 214);
+    
+    width: 90px;
+    height: auto;
+    text-align: center;
+    color: white;
+    /* border-color: blue; */
+    /* border-radius: 10%; */
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 10%;
+    padding-bottom: 15px;
+}
+
+@media only screen and (min-width:0px) and  (max-width:750px){
+    #container{
+    display:block;
+    width: 90%;
+    margin: auto;
+    }
+    #right{
+    display: block;
+    width: 100%;
+    text-align: center;
+    }
+    #left{
+        width: 80%;
+        justify-content: center;
+        margin: auto;
+    }
+    #left img{
+        width: 100%;
+        margin : auto;
+    }
+    #reviews{
+        width:95%;
+        margin:auto;
+    }
+    #faq{
+        width:95%;
+        margin:auto;
+    }
+}
