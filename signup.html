@@ -122,7 +122,7 @@ footer_div.innerHTML = footer()
                     alert("We Already have an Account with this Email Id")
                 }
                 else{
-                    storeData(obj)
+                    check_strength(obj)
                 }
             })       
         }     
@@ -130,6 +130,28 @@ footer_div.innerHTML = footer()
             console.log(er);
         }
     }
+
+    //  password should carry Capital letters, small letters, symbols & numbers & length should not be less than 12 
+
+    function check_strength(obj) {
+        var strongRegex = new RegExp("^(?=.{12,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+        var mediumRegex = new RegExp("^(?=.{10,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
+        var enoughRegex = new RegExp("(?=.{8,}).*", "g");
+        if (obj.password.length == 0) {
+            alert("Type password, password should carry Capital letters, small letters, symbols & numbers & length should not be less than 12 ")
+        } else if (false == enoughRegex.test(obj.password)) {
+            alert("Please type some More Characters, password should carry Capital letters, small letters, symbols & numbers & length should not be less than 12 ")
+        } else if (strongRegex.test(obj.password)) {
+            alert("Your password is strong!")
+            storeData(obj)
+        } else if (mediumRegex.test(obj.password)) {
+            alert("Your password strength is Medium! , password should carry Capital letters, small letters, symbols & numbers & length should not be less than 12 ")
+        } else {
+            alert("Your password strength is Weak! , password should carry Capital letters, small letters, symbols & numbers & length should not be less than 12 ")
+        }
+    }
+    
+
 
     async function storeData(details){
        try{
@@ -164,3 +186,5 @@ footer_div.innerHTML = footer()
         }
     }
 </script>
+
+
