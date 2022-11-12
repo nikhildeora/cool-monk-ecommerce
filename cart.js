@@ -201,4 +201,21 @@ for(let i=0;i<videogame_cat.length;i++){
 
 
 
-// let checkout = document.getElementById("")
+// login logout status 
+let homePage_username_logout_div = document.getElementById("username_logout_homePage_div")
+let Username_onHomePage = document.getElementById("Username_onHomePage")
+let homePage_logout_btn = document.getElementById("homePage_logout_btn")
+let signup_login_homePage_div = document.getElementById("signup_login_homePage_div")
+
+let login_logout_status = JSON.parse(localStorage.getItem("login_logout_status"))
+if(login_logout_status.login_status=="loggedin"){
+    signup_login_homePage_div.style.display = "none";
+    Username_onHomePage.innerText = login_logout_status.username;
+    homePage_username_logout_div.style.display = "flex";
+}
+
+homePage_logout_btn.onclick = ()=>{
+    localStorage.removeItem("login_logout_status")
+    signup_login_homePage_div.style.display = "block";
+    homePage_username_logout_div.style.display = "none";
+}

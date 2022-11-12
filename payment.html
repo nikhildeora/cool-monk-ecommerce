@@ -9,10 +9,10 @@
     <script src="https://kit.fontawesome.com/24c494a6b6.js" crossorigin="anonymous"></script>
     <title>Document</title>
     <style>
-        /* *{
+        *{
             margin: 0px;
             padding: 0px;
-        } */
+        }
         #payment-div {
             width: 30%;
             height: auto;
@@ -31,13 +31,19 @@
             font-family: sans-serif;
             font-size: 25px;
             margin: auto;
+            padding: 12px;
         }
 
         #pay-main select {
             padding: 10px 15px;
             border-radius: 5px;
             font-size: 20px;
-
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
+        #pay-main p{
+            margin-top: 16px;
+            margin-bottom: 16px;
         }
 
         #Prepaid div {
@@ -75,7 +81,7 @@
             font-weight: 500;
             border: 3px solid #2c3e50;
             border-radius: 10px;
-
+            margin-top: 17px;
         }
 
         #COD button:hover {
@@ -155,6 +161,14 @@
         #card-n input{
             padding: 12px;
         }
+        #prepaid_total_amount{
+            margin-bottom: 12px;
+            margin-top: 17px;
+        }
+        #Pbtn{
+            margin-top: 12px;
+            margin-bottom: 12px;
+        }
     </style>
 </head>
 
@@ -224,7 +238,7 @@
                     CVV
                     <input id="card_cvv" type="text" placeholder="enter CVV">
                 </label>
-                <h5>Total Amount : <span id="total_amount"></span></h5>
+                <h5 id="prepaid_total_amount">Total Amount : <span id="total_amount"></span></h5>
                 <button id="Pbtn">Confirm Payment</button>
 
             </div>

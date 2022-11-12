@@ -6,8 +6,15 @@ function navbar(){
                 </a>
 
                 <div id="signin">
-                <a href="login.html"><button>LOGIN</button></a>
-                <a href="signup.html"><button>SIGNUP</button></a>   
+
+                <div id="username_logout_homePage_div">
+                 <h3 id="Username_onHomePage"></h3>
+                <button id="homePage_logout_btn">Log out</button>
+                 </div>
+                 <div id="signup_login_homePage_div">
+                  <a id="homePage_login_btn" href="login.html"><button>LOGIN</button></a>
+                <a id="homePage_signup_btn" href="signup.html"><button>SIGNUP</button></a> 
+                </div>  
                     
                 </div>
             </div>
@@ -21,7 +28,7 @@ function navbar(){
                         <p> <a href="#" class="electronics">ELECTRONICS</a> </p>
                         <p> <a href="#" class="jewellery">JEWELLERY</a> </p>
                         <p> <a href="#" class="beauty">BEAUTY</a> </p>
-                        <p> <a href="#" class="videogame">VIDEO GAMES</a> </p>
+                        <p> <a href="#" class="videogame">VIDEOGAME</a> </p>
                     </div>
                 </div>
 

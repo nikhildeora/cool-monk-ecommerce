@@ -8,7 +8,12 @@
     padding-bottom: 12px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
 }
-
+#username_logout_homePage_div{
+    display: none;
+}
+#Username_onHomePage{
+    padding: 12px;
+}
 #top {
     width: 100%;
     margin: auto;
@@ -177,7 +182,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 50px;
-    padding: 20px;
+    padding: 20px 0px 20px 0px;
 }
 
 #footer_second {}
