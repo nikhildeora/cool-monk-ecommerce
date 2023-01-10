@@ -14,3 +14,9 @@ fw21_1068 - nikhil deora
 
 project website
 https://www.shop.com/
+
+
+netlify link 
+https://roaring-daffodil-f82dd7.netlify.app/
+
+

@@ -116,7 +116,8 @@
 
     // let loginItem= JSON.parse(localStorage.getItem("signup"))||[]
     async function check(useremail, userpwd) {
-        let res = await fetch(`https://powerful-savannah-17761.herokuapp.com/details`)
+        // let res = await fetch(`https://powerful-savannah-17761.herokuapp.com/details`)
+        let res = await fetch(`https://render-deployed-fitnexy.onrender.com/userprofile`)
         let data = await res.json()
 
         console.log(data)

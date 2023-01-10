@@ -108,7 +108,8 @@ footer_div.innerHTML = footer()
 
     async function check_api(obj){
         try{
-            let res = await fetch(`https://powerful-savannah-17761.herokuapp.com/details`)
+            // let res = await fetch(`https://powerful-savannah-17761.herokuapp.com/details`)
+            let res = await fetch(`https://render-deployed-fitnexy.onrender.com/userprofile`)
             let data = res.json()
             data.then((jhs)=>{
                 let check = 0;
@@ -155,7 +156,8 @@ footer_div.innerHTML = footer()
 
     async function storeData(details){
        try{
-        let res= await fetch (`https://powerful-savannah-17761.herokuapp.com/details`,{
+        // let res= await fetch (`https://powerful-savannah-17761.herokuapp.com/details`,{
+        let res= await fetch (`https://render-deployed-fitnexy.onrender.com/userprofile`,{
             method: 'POST',
             body: JSON.stringify(details),
             headers: {
