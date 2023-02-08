@@ -1,4 +1,5 @@
 # Cool Monk (Inspired by shop.com)
+<h3>Team Members : Nikhil Deora(Team Lead), Akarsha Bhardwaj , Surya Kumar Pokroyal and Utkarsh Sinha</h3>
 <h2>Cool Monk is an Ecommerce Website where you can find a variety of clothes, accessories, jewelry, electronics, beauty products, and more</h2>
 
 ![coolMonkHomepage](https://user-images.githubusercontent.com/112634386/213267871-97e32a50-7213-4511-ad45-b2f9ffccf767.png)
